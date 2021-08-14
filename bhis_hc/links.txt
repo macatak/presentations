@@ -1,0 +1,29 @@
+Links
+
+Elastic - https://www.elastic.co/downloads/
+
+OpenSearch - https://opensearch.org/downloads.html
+
+Python Modules
+elasticsearch
+Download - https://pypi.org/project/elasticsearch/
+Read the Docs - https://elasticsearch-py.readthedocs.io/en/7.x/
+Jupyter Notebooks with working examples - https://github.com/macatak/ELK/tree/master/Python-Elasticsearch-API
+
+elasticsearch-dsl
+Download - https://pypi.org/project/elasticsearch-dsl/
+Read the Docs - https://elasticsearch-dsl.readthedocs.io/en/latest/
+
+elastiflow (NetFlow) - https://github.com/robcowart/elastiflow/
+
+RED ELK (Red Team ELK) - https://github.com/outflanknl/RedELK
+
+Packt books
+Advanced Elasticsearch - https://www.packtpub.com/product/advanced-elasticsearch-7-0/9781789957754
+Elasticsearch Cookbook - https://www.packtpub.com/product/elasticsearch-7-0-cookbook-fourth-edition/9781789956504
+
+Data - data.gov 
+Chiago Crime Dataset (CSV) - https://data.cityofchicago.org/api/views/x2n5-8w5q/rows.csv?accessType=DOWNLOAD
+NYC Motor Vehicle Collisions Dataset (CSV) - https://data.cityofnewyork.us/api/views/bm4k-52h4/rows.csv?accessType=DOWNLOAD
+
+4 Hour Austin BSides 2019 Training (based on ELK 6 but most of it is still applicable) - https://github.com/macatak/ELK/tree/master/AustinBSides2019
