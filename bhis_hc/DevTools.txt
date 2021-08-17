@@ -146,7 +146,7 @@ PUT /_settings
 
 if that doesn't work:
 
-curl -XPUT -k --user <user>:<password>  -H "Content-Type: application/json" https://dcmitavtol0093.epga.nam.gm.com:9200/.kibana*/_settings -d '{"index.blocks.read_only_allow_delete": null}'
+curl -XPUT -k --user <user>:<password>  -H "Content-Type: application/json" https://localhost:9200/.kibana*/_settings -d '{"index.blocks.read_only_allow_delete": null}'
 
  
 
