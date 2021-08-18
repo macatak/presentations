@@ -14,14 +14,17 @@ elasticsearch-dsl
 Download - https://pypi.org/project/elasticsearch-dsl/
 Read the Docs - https://elasticsearch-dsl.readthedocs.io/en/latest/
 
+Misc ELK setups
 elastiflow (NetFlow) - https://github.com/robcowart/elastiflow/
-
 RED ELK (Red Team ELK) - https://github.com/outflanknl/RedELK
+HELK - https://github.com/Cyb3rWard0g/HELK
+
 
 Packt books
 Advanced Elasticsearch - https://www.packtpub.com/product/advanced-elasticsearch-7-0/9781789957754
-Postman files for most of the book - https://github.com/macatak/ELK/tree/master/Advanced_Elasticsearch_7.0
+  Postman files for most of the book - https://github.com/macatak/ELK/tree/master/Advanced_Elasticsearch_7.0  
 Elasticsearch Cookbook - https://www.packtpub.com/product/elasticsearch-7-0-cookbook-fourth-edition/9781789956504
+
 
 Data - data.gov 
 Chiago Crime Dataset (CSV) - https://data.cityofchicago.org/api/views/x2n5-8w5q/rows.csv?accessType=DOWNLOAD
