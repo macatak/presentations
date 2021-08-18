@@ -20,6 +20,7 @@ RED ELK (Red Team ELK) - https://github.com/outflanknl/RedELK
 
 Packt books
 Advanced Elasticsearch - https://www.packtpub.com/product/advanced-elasticsearch-7-0/9781789957754
+Postman files for most of the book - https://github.com/macatak/ELK/tree/master/Advanced_Elasticsearch_7.0
 Elasticsearch Cookbook - https://www.packtpub.com/product/elasticsearch-7-0-cookbook-fourth-edition/9781789956504
 
 Data - data.gov 
