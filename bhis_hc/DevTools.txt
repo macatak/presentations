@@ -1,3 +1,7 @@
+# Dev Tools Commands
+
+## Index information
+```code
 GET _cat/indices?help
 
 # sort by size
@@ -9,84 +13,85 @@ GET _cat/indices?pretty&s=health:desc
 # sort by doc count
 GET /_cat/indices?v&s=docs.count:desc 
 
+# sort by storage size
+GET _cat/indices?pretty&s=store.size:desc&h=index,store.size
+
+# sort by create date
+GET _cat/indices?v&h=h,s,i,p,r,dc,dd,ss,creation.date.string&s=creation.date:desc
+# short version
+GET _cat/indices?pretty&h=index,cds&s=cds
+
 # memory used
 GET /_cat/indices?v&h=i,tm&s=tm:desc
+```
 
-
+## Node Info 
+```code
 GET _cat/nodes?help
+# get All Nodes
+GET _cat/nodes?v
 
 GET _cat/nodes?pretty&s=name:desc
 curl -k -XGET --user <user>:<password> "https://localhost:9200/_cat/nodes?pretty&s=name:desc"
- 
 
+# by name
+GET _cat/nodes?v&s=name:asc&h=name
+GET _cat/nodes?v&s=name:desc
+
+```
+
+## Cluster Info
+```code
+# cluster health
 GET _cluster/health
+
+#curl version
 curl -k -XGET --user <user>:<password> "https://localhost:9200/_cat/nodes?pretty&s=name:desc"
 
-Other health related 
+# Other health related 
 curl -k -XGET --user <user>:<password> "https://localhost:9200/_cluster/state/blocks?pretty"
 GET _cat/health?v&h=status,node.data,active_shards_percent
 GET _cat/shards?h=node,store&bytes=gb&s=store:desc
-GET _cat/indices?pretty&s=store.size:desc&h=index,store.size
-
- 
-
-by create date
-GET _cat/indices?v&h=h,s,i,p,r,dc,dd,ss,creation.date.string&s=creation.date:desc
-GET _cat/indices?pretty&h=index,cds&s=cds
 
 # search for yellow or red indices
 GET _cat/indices?pretty&s=health:desc 
 
-This command will show you disk utilization and it should never go above 85%
+# disk utilization and it should never go above 85%
 GET _cat/nodes?v&h=name,dup&s=dup
 
-Shows the balancing of the shards. Goal would be to have the store column listed be under 100GB
+# balancing of the shards. Goal would be to have the store column listed be under 100GB
 GET _cat/shards?v&s=store:desc
-
 
 # free disk
 GET /_cat/allocation?v
 
-GET _cat/nodes?v
-# by name
-
-GET _cat/nodes?v&s=name:asc&h=name
-GET _cat/nodes?v&s=name:desc
-
-
-To get All Nodes
-GET _cat/nodes?v
-
-Get masters
+# Get masters
 GET _cat/master?h=node
 
-To get red shards to retry
+# get red shards to retry
 POST /_cluster/reroute?retry_failed=true
 
+# metadata
 GET _cluster/state/metadata
 
 # should not be readonly
 GET _cluster/state/blocks?pretty
 
-
 # fix readonly across a cluster
 PUT /_settings
-
 {
-
   "index.blocks.read_only_allow_delete": null
-
 }
 
-if that doesn't work:
-curl -XPUT -k --user <user>:<password>  -H "Content-Type: application/json" https://localhost:9200/.kibana*/_settings -d '{"index.blocks.read_only_allow_delete": null}'
+# if that doesn't work:
+curl -XPUT -k --user <user>:<password>  -H "Content-Type: application/json" https://localhost:9200/.kibana*/_settings -d '{"index.blocks.read_only_allow_delete": null}
+```
 
+## Searching
 
-get results from an index
-
-only returns message/timestamp (and other default fields
+only returns message/timestamp and other default fields
 size:5000 sets number of returns, default is 10
-
+```code
 GET <index name>/_search?
 {
   "_source": {
@@ -97,6 +102,4 @@ GET <index name>/_search?
     "match_all": {}
   }
 }
-
- 
-
+```
